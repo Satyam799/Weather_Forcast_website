@@ -3,11 +3,11 @@ import { Uppost } from "./Context"
 
 function Secratescreen() {
 
-    const {name}=Uppost()
+    const {city,temp}=Uppost()
 
     return (
         <div>
-            {name ? <Outlet/> : <Navigate to={'/screen1'} replace/>}
+            {city && temp ? <Outlet/> : <Navigate to={'/'} replace/>}
         </div>
     )
 }

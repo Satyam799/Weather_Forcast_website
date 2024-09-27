@@ -38,3 +38,20 @@ export async function Getcity(data){
 
 }
 
+
+
+/*export  function Getcreerntlocation(){
+    try{
+    navigator.geolocation.getCurrentPosition(async(position)=>{
+        
+        const lat=position.coords.latitude
+        const lng=position.coords.longitude
+        const data={lat:lat,lng:lng}
+        const result=await Getcitydetails(data)
+        console.log('hi')
+        return result.address.city
+    })
+}catch(err){
+    console.log('current location access is not given ')
+}
+}*/
