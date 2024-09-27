@@ -19,7 +19,9 @@ function Providerr({ children }) {
 
     return weathersituation
   }
- 
+
+  console.log('')
+
   function firstgo() {
 
     navigator.permissions.query({name:'geolocation'}).then(function(result){
