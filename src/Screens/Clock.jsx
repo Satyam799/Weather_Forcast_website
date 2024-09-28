@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Uppost } from "./Context";
 import { FaClock } from "react-icons/fa6";
 
 function Clock() {
@@ -13,7 +12,7 @@ function Clock() {
       clearInterval(interval);
     };
   }, []);
-
+console.log('hi')
   return (
     <div
       style={{

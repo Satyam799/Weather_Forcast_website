@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Getcity, Getcitydetails, Temperatureapi } from "../utils/api";
 import { WEATHER_INTERPRATIONS } from "./weatherdata";
 
@@ -19,9 +19,7 @@ function Providerr({ children }) {
 
     return weathersituation
   }
-
-  console.log('')
-
+ console.log('hi')
   function firstgo() {
 
     navigator.permissions.query({name:'geolocation'}).then(function(result){
