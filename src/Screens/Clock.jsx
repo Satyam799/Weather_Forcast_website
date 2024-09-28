@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { FaClock } from "react-icons/fa6";
+import { Uppost } from "./Context";
 
 function Clock() {
   const [time, settime] = useState(new Date());
-
   useEffect(function () {
     const interval = setInterval(() => {
       settime(new Date());
@@ -12,7 +12,6 @@ function Clock() {
       clearInterval(interval);
     };
   }, []);
-console.log('hi')
   return (
     <div
       style={{

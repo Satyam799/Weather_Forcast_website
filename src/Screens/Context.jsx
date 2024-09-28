@@ -10,22 +10,25 @@ function Providerr({ children }) {
   const [temp, settemp] = useState();
   const [city, setcity] = useState(firstgo);
   const [coord, setcoord] = useState({ lat: "", lng: "" });
- 
+  const [zoomelevel,setzoomlevel]=useState(window.devicePixelRatio)
+  window.addEventListener('resize',(()=>setzoomlevel(window.devicePixelRatio)))
+
   
+
+
   function weathercode(value){
-    const weathersituation = WEATHER_INTERPRATIONS.find((el) =>
-      el.codes.find((el) => el === value)
+    const weathersituation = WEATHER_INTERPRATIONS.find((el) => !value ? el.label==='Sunny' : el.codes.find((el) =>el === value )
     );
 
     return weathersituation
+  
+
   }
- console.log('hi')
   function firstgo() {
 
     navigator.permissions.query({name:'geolocation'}).then(function(result){
       if(result.state === 'granted'){
         navigator.geolocation.getCurrentPosition(async (position) => {
-          console.log(position)
           const lat = position?.coords?.latitude;
           const lng = position?.coords?.longitude;
           const data = { lat: lat, lng: lng };
@@ -99,7 +102,8 @@ function Providerr({ children }) {
         setcity,
         handelgetcity,
         isLoading,
-        weathercode
+        weathercode,
+        zoomelevel
       }}
     >
       {children}

@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { Uppost } from "./Context";
-import { useRef } from "react";
+import {  useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaTemperatureHigh } from "react-icons/fa6";
 import Loader from "../utils/Loader";
 
-const heightwindoe =window.innerHeight
-const widthwindow =window.innerWidth
-console.log(widthwindow,heightwindoe)
+
+
 
 function Screen() {
   const navigate = useNavigate();
-  const { name, setname, handelgetcity, temp, city, isLoading, weathercode } =
-    Uppost();
+  const { name, setname, handelgetcity, temp, city, isLoading, weathercode,zoomelevel } =Uppost();
   const enter = useRef(null);
+  console.log(zoomelevel)
+
 
   function handelevent(event) {
     if (event.key === "Enter") {
@@ -41,10 +41,10 @@ function Screen() {
             flexDirection: "column",
           }}
         >
-          {!temp && <div>
+          {!temp  && <div>
               <p style={{fontWeight:'bold',fontSize:50,color:'#41f80b'}}>Start searching !!</p>
             </div>}
-          {temp && (
+          {temp  &&  zoomelevel <1.875 &&(
             <div
               style={{
                 position: "absolute",
@@ -71,13 +71,13 @@ function Screen() {
             </div>
           )}
 
-          {temp &&  (
-            <div style={{ position: "absolute", top: 70, right: 300 }}>
-              <img
-                style={{ width: 200, height: 200 }}
+          {temp &&   (
+            <div style={{ position: "absolute", top: zoomelevel > 2.5 ? 20 :70 , right: zoomelevel > 2.5 ? 100:300 }}>
+             {  <img
+                style={{ width: zoomelevel >=1.875 ? 20:150, height: zoomelevel >=1.875 ? 20 :150 }}
                 src={weathersituation?.image}
                 alt="no image"
-              />
+              />}
             </div>
           )}
 
@@ -92,7 +92,7 @@ function Screen() {
           >
             <p
               style={{
-                fontSize: 50,
+                fontSize: zoomelevel >=1.875 ? 10 : 50,
                 color: "white",
                 fontWeight: "revert-layer",
                 textDecoration: "underline",
@@ -107,7 +107,7 @@ function Screen() {
               style={{
                 display: "flex",
                 width: "60%",
-                height: "20%",
+                height: zoomelevel <1.875 ? "20%":"50%",
                 justifyContent: "flex-start",
 
                 alignItems: "baseline",
@@ -115,7 +115,7 @@ function Screen() {
             >
               <p
                 style={{
-                  fontSize: 100,
+                  fontSize:  100,
                   color: "white",
                   fontWeight: "initial",
                   display: "flex",
@@ -145,38 +145,38 @@ function Screen() {
               justifyContent: "center",
               alignItems: "center",
               width: "100%",
-              height: "8%",
+              height: zoomelevel < 1.875  ? "8%" :'16%',
             }}
           >
             <input
               style={{
-                width: "60%",
-                height: "100%",
-                borderRadius: 30,
+                width:  zoomelevel < 1.875 ?"60%":'50%',
+                height: zoomelevel < 1.875 ?"80%":'50%',
+                borderRadius: 30 ,
                 paddingLeft: 30,
-                fontSize: 18,
-                fontWeight: "bolder",
+                fontSize:  20,
+                fontWeight: 'lighter',
               }}
               ref={enter}
               type="text"
-              placeholder="Please Enter the city name"
+              placeholder={zoomelevel < 1.875  ? ' Please Enter the city name':'' }
               value={name}
               onChange={(e) => setname(e.target.value)}
               onKeyDown={handelevent}
             />
-            <CiSearch
+            {zoomelevel <= 1.875 &&<CiSearch
               size={24}
               color="black"
               style={{ position: "absolute", marginLeft: "58%" }}
-            />
+            />}
           </div>
           <div
             style={{
               display: "flex",
               justifyContent: "space-evenly",
               alignItems: "flex-start",
-              width: "80vw",
-              height: "5vh",
+              width: "80%",
+              height: "5%",
               padding: 25,
             }}
           >
@@ -194,7 +194,7 @@ function Screen() {
                 handelgetcity(name);
               }}
             >
-              Find It <FaTemperatureHigh size={24} color="red" />
+              Find It  {zoomelevel < 1.875 && <FaTemperatureHigh size={10} color="red" />}
             </button>
             <button
               style={{
@@ -215,7 +215,7 @@ function Screen() {
               Screen 2{" "}
             </button>
           </div>
-         { temp && <div
+         { temp && zoomelevel <1.875 && <div
             style={{
               display: "flex",
               width: "100%",
@@ -246,7 +246,7 @@ function Screen() {
                   alignItems: "center",
                 }}
               >
-                <div style={{ padding: 30 }}>
+                <div style={{ }}>
                   <span
                     style={{
                       display: "flex",
@@ -265,7 +265,7 @@ function Screen() {
                     <p>Windspeed</p>
                   </span>
                 </div>
-                <div style={{ padding: 30 }}>
+                <div style={{ }}>
                   <span
                     style={{
                       display: "flex",
@@ -281,7 +281,7 @@ function Screen() {
                     <p>Sunrise</p>
                   </span>
                 </div>
-                <div style={{ padding: 30 }}>
+                <div style={{  }}>
                   <span
                     style={{
                       display: "flex",

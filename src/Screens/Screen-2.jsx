@@ -63,7 +63,6 @@ function Screen2() {
       >
         {datacreation.map((el, i) => {
           const imagee = weathercode(el?.weathercode);
-          console.log(el.time);
           return (
             <div
               key={i}
