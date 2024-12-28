@@ -1,0 +1,320 @@
+.App {
+  background-image: url("./assets/image.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.s1main {
+  height: 100vh;
+  display: flex;
+
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.peragraph {
+  font-weight: bold;
+  height: auto;
+  font-size: 80px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.searchlevel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.finding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finding2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.unique {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.inputt {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 10px;
+  border: 2px solid black;
+}
+.inputt::placeholder {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+.forposiioning {
+  width: 60%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchicone {
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  right: 10px;
+  transform: translateY(-50%, -50%);
+}
+
+.findbutton {
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+}
+.finding {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .peragraph {
+    font-size: 40px;
+  }
+  .inputt {
+    width: 100%;
+    height: 30px;
+  }
+  .findbutton {
+    width: 20%;
+  }
+  .unique {
+    height: auto;
+  }
+  .searchicone {
+    size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .peragraph {
+    font-size: 15px;
+  }
+  .inputt {
+    width: 100%;
+    height: 20px;
+  }
+  .findbutton {
+    width: 30%;
+  }
+  .unique {
+    height: auto;
+  }
+}
+
+.image {
+  width: 30px;
+  height: 30px;
+}
+.temperature {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 100px;
+  color: white;
+}
+
+.temperaturemini {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.c {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: baseline;
+}
+
+.imagename {
+  width: 100%;
+}
+
+.image2 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 300px;
+  top: 0;
+}
+.cityname {
+  position: relative;
+  height: auto;
+  margin: 10px;
+}
+
+.cityp {
+  font-size: 80px;
+  color: white;
+  padding: 30px;
+  font-weight: bold;
+  text-decoration: underline grey;
+}
+
+.lable {
+  top: 150px;
+  right: 100px;
+  transform: rotate(-90deg);
+  position: absolute;
+}
+
+.lablep {
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.clock p {
+  color: white;
+}
+
+.borders {
+  width: 40%;
+  height: 20%;
+  border: 5px solid white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aggarngemant {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+@media (max-width: 1066px) {
+  .peragraph {
+    font-size: 15px;
+  }
+  .temperature {
+    font-size: 50px;
+  }
+  .lablep {
+    font-size: 30px;
+  }
+  .cityp {
+    font-size: 50px;
+  }
+  .image2 {
+    height: 60px;
+    width: 60px;
+  }
+  .lable {
+    top: 100px;
+  }
+  .image2 {
+    right: 150px;
+  }
+}
+
+@media (max-width: 785px) {
+  .cityp {
+    font-size: 20px;
+  }
+  .image2 {
+    display: none;
+  }
+  .borders {
+    display: none;
+  }
+  .cityname {
+    margin: 0;
+  }
+  .cityp {
+    padding: 0;
+  }
+  .lable {
+    transform: rotate(0deg);
+  }
+  .temperature {
+    font-size: 20px;
+  }
+  .c {
+    font-size: 10px;
+  }
+  .lablep {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .image2 {
+    display: none;
+  }
+
+  .lable {
+    top: 0;
+  }
+  .cityp {
+    font-size: 10px;
+  }
+  .findbutton{
+    width: 20%;
+    padding: 0;
+    font-size: 5px;
+  }
+  .searchicone{
+    display: none;
+  }
+  .inputt::placeholder{
+    font-size: 5px;
+
+  }
+  .unique{
+    gap: 15px;
+  }
+  
+}
+@media(max-width:200px){
+  .s1main{
+    width: 200px;
+  }
+}

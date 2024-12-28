@@ -5,10 +5,9 @@ function Secratescreen() {
 
     const {city,temp}=Uppost()
 
-    return (
-        <div>
+    return (<>
             {city && temp ? <Outlet/> : <Navigate to={'/'} replace/>}
-        </div>
+            </>
     )
 }
 

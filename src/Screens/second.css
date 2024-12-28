@@ -1,0 +1,95 @@
+.secondstart{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.backbutton{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    color: bisque;
+}
+
+.ar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.Citynameheading p{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+.eachday{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.eachday p{
+    color: white;
+    font-size: 25px;
+}
+
+.image5{
+    width: 80px;
+    height: 80px;
+}
+
+
+
+@media (max-width:633px){
+    .eachday p{
+        width: auto;
+        gap: 2px;
+        font-size: 8px;
+    }
+
+    
+    .image5{
+        width: 30px;
+        height: 30px;
+    }
+    .backbutton{
+        top: 0;
+        left: 0;
+    }
+    
+}
+
+@media(max-width:431px){
+    .eachday{
+        width: 460px;
+    }
+    .eachday p{
+        width: auto;
+        gap: 2px;
+        font-size: 8px;
+    }
+
+    
+    .image5{
+        width: 30px;
+        height: 30px;
+    }
+    .Citynameheading p{
+        font-size: 30px;    
+    }
+ 
+}

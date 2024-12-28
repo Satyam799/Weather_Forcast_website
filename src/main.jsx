@@ -15,7 +15,6 @@ const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
         <Route index={true} path='/' element={<Screen/>}/>
-        <Route path='/screen1' element={<Screen/>}/>
         <Route  path='' element={<Secratescreen/>}>
             <Route path='/screen2' element={<Screen2/>}/>
         </Route>

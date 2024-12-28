@@ -63,6 +63,7 @@ function Providerr({ children }) {
       async function handelgetTemp() {
         if (coord?.lat && coord?.lng) {
           try {
+            console.log(1)
             const res = await Temperatureapi(coord);
             settemp(res);
             setname("");
