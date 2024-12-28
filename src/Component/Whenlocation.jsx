@@ -6,7 +6,7 @@ import { FaTemperatureHigh } from "react-icons/fa6";
 
 function Whenlocation() {
   const navigate = useNavigate();
-  const { name, setname, handelgetcity, temp, city, weathercode, zoomelevel } =
+  const { name, setname, handelgetcity, temp, city, weathercode } =
     Uppost();
   const enter = useRef(null);
 
@@ -88,6 +88,7 @@ function Whenlocation() {
       </div>
 
       <div className="borders">
+        
         <div className="aggarngemant">
             <div>
               <span>

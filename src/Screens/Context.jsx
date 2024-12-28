@@ -30,7 +30,9 @@ function Providerr({ children }) {
         const data = { lat: lat, lng: lng };
         try {
           const res = await Getcitydetails(data);
-          if (res?.address?.city) {
+          if (res?.address?.city || res?.address?.country ||res?.address?.city_district) {
+            console.log(3)
+
             return await handelgetcity(res?.address?.city);
           }
         } catch {
@@ -63,7 +65,6 @@ function Providerr({ children }) {
       async function handelgetTemp() {
         if (coord?.lat && coord?.lng) {
           try {
-            console.log(1)
             const res = await Temperatureapi(coord);
             settemp(res);
             setname("");

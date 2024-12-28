@@ -12,6 +12,7 @@ try{
 }
 
 export async function Getcitydetails(data){
+
 try{
     const dataa=await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${data.lat}&lon=${data.lng}`)
     const res=await dataa.json()
@@ -26,6 +27,7 @@ try{
 
 
 export async function Getcity(data){
+
   try{
     const dataa=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${data}&count=1&language=en&format=json`)
     const res=await dataa.json()
